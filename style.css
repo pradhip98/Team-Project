@@ -1,0 +1,360 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+*,*::after,*::before{
+    box-sizing: border-box;
+}
+body{
+    background-color:#ecebeb;
+    font-family: "Poppins", sans-serif;
+}
+.container{
+  position: relative;
+       padding: 40px;
+}
+.content{
+    display: grid;
+    grid-template-columns:auto auto auto auto;
+    justify-content: center;
+    column-gap:40px;
+    row-gap: 40px;
+   }
+.card{
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow:8px 8px 5px #52745b;
+}
+.card img{
+    width:100%;
+    border-radius: 10px;
+
+}
+.btn{
+    color:#ffffff;
+    text-decoration: none;
+    width:fit-content;
+    height: 40px;
+    text-align: center;
+    padding:10px 10px;
+    border-radius: 5px;
+    border:1px solid #000;
+    }
+.btn-primary{
+      border: none;
+    background:linear-gradient(180deg,rgb(0, 120, 189),rgb(0, 132, 255));
+}
+
+.btn-primary:hover{
+  background-image:linear-gradient(180deg,rgb(0, 76, 121),rgb(33, 72, 109));
+}
+
+.button {
+    display: inline;
+    position: relative;
+    width:150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #34974d;
+    background-color: #3aa856;
+    border-radius:5px;
+  }
+  
+  .button, .button__icon, .button__text {
+    transition: all 0.3s;
+  }
+  
+  .button .button__text {
+    transform: translateX(10px);
+    color: #fff;
+    font-weight: 600;
+   
+  }
+  
+  .button .button__icon {
+    position: absolute;
+    transform: translateX(105px);
+    height: 100%;
+    width:39px;
+    background-color: #34974d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5px;
+  }
+  
+  .button .svg {
+    width: 30px;
+    stroke: #fff;
+  }
+  
+  .button:hover {
+    background: #34974d;
+  }
+  
+  .button:hover .button__text {
+    color: transparent;
+  }
+  
+  .button:hover .button__icon {
+    width:130px;
+    transform: translateX(0);
+  }
+  
+  .button:active .button__icon {
+    background-color: #2e8644;
+  }
+  
+  .button:active {
+    border: 1px solid #2e8644;
+  }
+  .buy-cart{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+ .card-title{
+  position: relative;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+ }
+ .heart{
+  position: absolute;
+  right:12px;
+  background-color: rgb(255, 255, 255);
+  border-radius:50px;
+  top:-25px;
+  padding:2px;
+ }
+  .con-like {
+    --red: rgb(255, 50, 50);
+    position: relative;
+    width:30px;
+    height:30px;
+
+  }
+  
+  .con-like .like {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 20;
+    cursor: pointer;
+  }
+  
+  .con-like .checkmark {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .con-like .outline,
+  .con-like .filled {
+    fill: var(--red);
+    position: absolute;
+  }
+  
+  .con-like .filled {
+    animation: kfr-filled 0.5s;
+    display: none;
+  }
+  
+ 
+  
+  .con-like .poly {
+    stroke: var(--red);
+    fill: var(--red);
+  }
+  
+  .con-like .like:checked ~ .checkmark .filled {
+    display: block
+  }
+  
+  @keyframes kfr-filled {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+  
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+  .checked{
+    color: orange;
+  }
+  .price{
+    width:160px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  h5{
+    font-size: larger;
+    margin: 0 0 6px;
+  }
+
+  .buy-logo{
+    background-color: red;
+    fill: rgb(255, 255, 255);
+    position:absolute;
+    z-index: 2;
+    border-radius:10px;
+    height: 20px;
+    
+    width:10px;
+    transform:translateX(-100px);
+  }
+  .buy-logo svg{
+    display: none;
+  }
+
+ .btn-primary:hover + .buy-logo{
+    width:100%;
+  }
+  #buy{
+    position: relative;
+  }
+  .button2{
+    --width: 95px;
+    --height: 40px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: #222;
+    --tooltip-color: #fff;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+  }
+  
+  .button2::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    background-color: #555;
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+  }
+  
+  .button2::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-top-color: #555;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+  }
+  
+  .button2::after,.button2::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+  }
+  
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button-wrapper,.text,.icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+  }
+  
+  .text {
+    top: 0
+  }
+  
+  .text,.icon {
+    transition: top 0.5s;
+  }
+  
+  .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon svg {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .button2:hover {
+    background: #222;
+  }
+  
+  .button2:hover .text {
+    top: -100%;
+  }
+  
+  .button2:hover .icon {
+    top: 0;
+  }
+  
+  .button2:hover:before,.button:hover:after {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .button2:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+  }
+  
+  .button2:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+  }
+
+  @media only screen and(max-width:700px){
+    .card{
+        background-color: #ffffff;
+        padding:10px;
+        border-radius: 10px;
+        width:200px;
+        box-shadow:8px 8px 5px #52745b;
+    }
+    .card img{
+        width:100px;
+        border-radius: 10px;
+        }
+        .content{
+            display: grid;
+            grid-template-columns:auto ;
+          
+            justify-content: center;
+            /* column-gap:40px;
+            row-gap: 40px; */
+           }
+
+}
+  
+  
+  
+  
